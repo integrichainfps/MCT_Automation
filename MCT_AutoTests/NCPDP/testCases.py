@@ -18,7 +18,10 @@ class TestNewNCPDP(unittest.TestCase):
         driver = self.driver
         newNcpdpButton = driver.find_element_by_xpath("//div[contains(@class,'tool-button') and contains(@class,'add-button')]/div[@class='button-outer']/span[@class='button-inner']")
         newNcpdpButton.click()
-        assert 1 == 1
+        #assert 1 == 1
+        driver.implicitly_wait(10)
+        closepopup = driver.find_element_by_xpath("//*[@title='Close']")
+
 
     def tearDown(self):
         self.driver.quit()
